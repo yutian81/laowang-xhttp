@@ -1,20 +1,24 @@
+# VLESS-XHTTP golang 版
+
+高性能xhttp协议实现
+
+## 环境变量配置
+
+| 变量名 | 默认值 | 说明 |
+|--------|--------|------|
+| `UUID` | `a2056d0d-c98e-4aeb-9aab-37f64edd5710` | UUID |
+| `NEZHA_SERVER` | `` | 哪吒服务器地址 |
+| `NEZHA_PORT` | `` | 哪吒端口 (v0版本使用) |
+| `NEZHA_KEY` | `` | 哪吒密钥 |
+| `AUTO_ACCESS` | `false` | 自动保活开关 |
+| `XPATH` | UUID前8位 | XHTTP路径 |
+| `SUB_PATH` | `sub` | 订阅路径 |
+| `DOMAIN` | 自动获取 | 服务器域名或IP |
+| `NAME` | `Xhttp` | 节点名称 |
+| `PORT` | `3000` | HTTP服务端口 |
+| `LOG_LEVEL` | `none` | 日志级别 (none/debug/info/warn/error) |
 
 
-# serverless-xhttp
-* serverless-vless-xhttp，集成哪吒探针，v0或v1可选。
-* 哪吒v0的agent端口为{443,8443,2096,2087,2083,2053}其中之一时，自动开启--tls。
-
-
-* 环境变量
-  | 变量名        | 是否必须 | 默认值 | 备注 |
-  | ------------ | ------ | ------ | ------ |
-  | PORT         | 是 |  3000  |http服务监听端口，也是订阅端口     |
-  | UUID         | 否 | 0cf85927-2c71-4e87-9df3-b1eb7d5a9e1b|UUID,使用哪吒v1在不同的平台部署需要修改|
-  | NEZHA_SERVER | 否 |        | 哪吒面板域名，v1：nz.aaa.com:8008  v0: nz.aaa.com  |
-  | NEZHA_PORT   | 否 |        | 哪吒v1没有此项，哪吒v0端口为{443,8443,2096,2087,2083,2053}其中之一时，开启tls|
-  | NEZHA_KEY    | 否 |        | 哪吒v1 或v0 密钥                 |
-  | DOMAIN       | 否 |        | 项目域名                         |
-  | XPATH        | 否 |  xhttp | 节点路径                         | 
-  | AUTO_ACCESS  | 否 |  false | 自动保活，true开启,false关闭       |
-  | SUB_PATH     | 否 |  sub   | 节点订阅路径                      |
-  | NAME         | 否 |        | 节点名称                         |
+### 温馨提示
+* 如果使用的是IP:端口或域名:端口形式访问首页，请关闭节点的tls，并将节点端口改为运行的端口
+* 如果需要使用CDN功能，将IP解析到cloudflared，并设置端口回源，然后将节点的host和sni改为解析的域名
