@@ -4,12 +4,9 @@ on:
   push:
     branches:
       - huggingface
-    paths:
-      - app2.js
+    #paths:
+    #  - app2.js
   workflow_dispatch:
-
-permissions:
-  contents: write
 
 jobs:
   obfuscate_and_update_worker:
