@@ -6,7 +6,8 @@ on:
     workflows: ["Auto Obfuscate hug"]
     types:
       - completed
-    branches: [ huggingface ]
+    branches:
+      - huggingface
 
 jobs:
   build:
