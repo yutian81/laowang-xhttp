@@ -485,7 +485,7 @@ function socketToWebStream(socket) {
     };
 }
 
-// relay 函数
+// 延迟函数
 function relay(cfg, client, remote, vless) {
     const pump = pipe_relay();
     let isClosing = false;
